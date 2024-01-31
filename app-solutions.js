@@ -1,4 +1,13 @@
-function numeroDeFibonacci (numero, actual = 1, previo = 0) {
+const numeroDeArmstrong = (num) => {
+  const numString = num.toString()
+  const numDigitos = numString.length
+  const numArr = numString.split('')
+  const numArrPot = numArr.map(n => n ** numDigitos)
+  const result = numArrPot.reduce((total, valor) => total + valor, 0)
+  return result === num
+}
+
+const numeroDeFibonacci = (numero, actual = 1, previo = 0) => {
   // Caso base: el número actual en la secuencia es igual al número proporcionado o el el numero proporcionado es 0
   if (actual === numero || previo === numero) {
     return true
@@ -34,6 +43,7 @@ const esNumeroFeliz = (num) => {
 }
 
 module.exports = {
+  numeroDeArmstrong,
   numeroDeFibonacci,
   esNumeroFeliz
 }

@@ -2,12 +2,26 @@
   numeroDeFibonacci
 } = require('./app.js') */
 const {
+  numeroDeArmstrong,
   numeroDeFibonacci,
   esNumeroFeliz
 } = require('./app-solutions.js')
 
 describe('Matematicas', () => {
-  describe('Función de Fibbonachi', () => {
+  describe('Numero de Armstrong 🪞', () => {
+    test('La función nos devuelve true si la suma de los dígitos, cada uno elevado a la potencia del número total de dígitos, es igual al propio número.', () => {
+      expect(numeroDeArmstrong(8)).toBeTruthy()
+      expect(numeroDeArmstrong(153)).toBeTruthy()
+      expect(numeroDeArmstrong(8208)).toBeTruthy()
+    })
+    test('La función nos devuelve false si la suma de los dígitos, cada uno elevado a la potencia del número total de dígitos, NO es igual al propio número', () => {
+      expect(numeroDeArmstrong(13)).toBeFalsy()
+      expect(numeroDeArmstrong(145)).toBeFalsy()
+      expect(numeroDeArmstrong(8207)).toBeFalsy()
+    })
+  })
+
+  describe('Función de Fibbonachi 🐚', () => {
     test('Los numeros 0 y 1 devuelven true', () => {
       expect(numeroDeFibonacci(0)).toBeTruthy()
       expect(numeroDeFibonacci(1)).toBeTruthy()
@@ -18,7 +32,7 @@ describe('Matematicas', () => {
       expect(numeroDeFibonacci(89)).toBeTruthy()
       expect(numeroDeFibonacci(144)).toBeTruthy()
     })
-    test('La función nos devuelve false si el número pasado como parámetro no pertenece a la sucesión de Fibinacci', () => {
+    test('La función nos devuelve false si el número pasado como parámetro NO pertenece a la sucesión de Fibinacci', () => {
       expect(numeroDeFibonacci(7)).toBeFalsy()
       expect(numeroDeFibonacci(11)).toBeFalsy()
       expect(numeroDeFibonacci(45)).toBeFalsy()
