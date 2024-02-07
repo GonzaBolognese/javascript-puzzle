@@ -1,10 +1,13 @@
 /* const {
   numeroDeFibonacci
 } = require('./app.js') */
+const { describe } = require('node:test')
 const {
   numeroDeArmstrong,
   numeroDeFibonacci,
-  esNumeroFeliz
+  esNumeroFeliz,
+  toCamelCase
+
 } = require('./app-solutions.js')
 
 describe('Matematicas', () => {
@@ -58,6 +61,23 @@ describe('Matematicas', () => {
       expect(esNumeroFeliz(-3)).toBe('No es feliz')
       expect(esNumeroFeliz(-7)).toBe('No es feliz')
       expect(esNumeroFeliz(-19)).toBe('No es feliz')
+    })
+  })
+})
+
+describe('String', () => {
+  describe('toCamelCase', () => {
+    test('Si se proporciona un string vacio devuelve el string vacio', () => {
+      expect(toCamelCase('')).toBe('')
+    })
+    test('Si se pasa el string "full_stack_developer" devuelve "fullStackDeveloper"', () => {
+      expect(toCamelCase('full_stack_developer')).toBe('fullStackDeveloper')
+    })
+    test('Si se pasa el string "Full-Stack-Developer" devuelve "FullStackDeveloper"', () => {
+      expect(toCamelCase('Full-Stack-Developer')).toBe('FullStackDeveloper')
+    })
+    test('Si se pasa el string "F-S-D" devuelve "FSD"', () => {
+      expect(toCamelCase('F-S-D')).toBe('FSD')
     })
   })
 })
