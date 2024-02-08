@@ -58,10 +58,22 @@ const toCamelCase = (str) => {
 
 }
 
+// ES PALINDROMO?
+// Un palíndromo es una secuencia de caracteres, ya sea una palabra, frase
+// que se lee de la misma manera hacia adelante y hacia atrás.
+// Se espera que desarrolles una función que determine si el string ingresado es un palindromo.
+// En caso de que si sea un palindromo, la funcion debe retornar true
+// En el caso contrario la misma debe devolver false
+
+const esPalindromo = (str) => {
+
+}
+
 module.exports = {
   numeroDeArmstrong,
   numeroDeFibonacci,
   esNumeroFeliz,
   strCount,
-  toCamelCase
+  toCamelCase,
+  esPalindromo
 }

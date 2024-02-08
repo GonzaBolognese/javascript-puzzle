@@ -7,9 +7,11 @@ const {
   numeroDeFibonacci,
   esNumeroFeliz,
   strCount,
-  toCamelCase
+  toCamelCase,
+  esPalindromo
 
 } = require('./app-solutions.js')
+const exp = require('constants')
 
 describe('Matematicas', () => {
   describe('Numero de Armstrong 🪞', () => {
@@ -99,6 +101,31 @@ describe('String', () => {
     })
     test('Si se pasa el string "F-S-D" devuelve "FSD"', () => {
       expect(toCamelCase('F-S-D')).toBe('FSD')
+    })
+  })
+
+  describe('esPalindromo', () => {
+    test('La funcion retorna false si el texto ingresado NO es un palindromo', () => {
+      expect(esPalindromo('Tanjiro')).toBeFalsy()
+      expect(esPalindromo('Abca')).toBeFalsy()
+      expect(esPalindromo('smart')).toBeFalsy()
+    })
+    test('La funcion retorna true si el texto ingresado es un palindromo', () => {
+      expect(esPalindromo('neuquen')).toBeTruthy()
+      expect(esPalindromo('reconocer')).toBeTruthy()
+      expect(esPalindromo('kayak')).toBeTruthy()
+      expect(esPalindromo('level')).toBeTruthy()
+    })
+    test('La funcion no es CaseSensitive', () => {
+      expect(esPalindromo('Radar')).toBeTruthy()
+      expect(esPalindromo('saLaS')).toBeTruthy()
+      expect(esPalindromo('Madam')).toBeTruthy()
+    })
+    test('La funcion también valida frases', () => {
+      expect(esPalindromo('La ruta natural')).toBeTruthy()
+      expect(esPalindromo('Never odd or even')).toBeTruthy()
+      expect(esPalindromo('smart water')).toBeFalsy()
+      expect(esPalindromo('agua mineral')).toBeFalsy()
     })
   })
 })

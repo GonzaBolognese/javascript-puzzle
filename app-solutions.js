@@ -74,10 +74,17 @@ const toCamelCase = (str) => {
   }).join('')
 }
 
+// ¿ES PALINDROMO?
+
+const esPalindromo = (str) => {
+  return str.toLowerCase().replaceAll(' ', '') === str.toLowerCase().replaceAll(' ', '').split('').reverse().join('')
+}
+
 module.exports = {
   numeroDeArmstrong,
   numeroDeFibonacci,
   esNumeroFeliz,
   strCount,
-  toCamelCase
+  toCamelCase,
+  esPalindromo
 }
