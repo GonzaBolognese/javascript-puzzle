@@ -37,6 +37,14 @@ const esNumeroFeliz = (num) => {
 
 // STRINGS
 
+// CARACTER REPETIDO
+// Crea una función que acepte una cadena y un único carácter, y devuelva un entero que represente la cantidad de veces que se encuentra el segundo argumento en la primera cadena.
+// Si no se encuentran ocurrencias, se debe devolver un recuento de 0.
+
+const strCount = (str, l) => {
+
+}
+
 // CONVERTIR GUIONES/GUIONES BAJOS EN CAMELCASE
 // Completa la función para que convierta palabras delimitadas por guiones bajos o guiones en notación camelCase
 // La primera palabra en la salida debería estar en mayúscula solo si la palabra original estaba en mayúscula.
@@ -54,5 +62,6 @@ module.exports = {
   numeroDeArmstrong,
   numeroDeFibonacci,
   esNumeroFeliz,
+  strCount,
   toCamelCase
 }

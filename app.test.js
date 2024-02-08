@@ -6,6 +6,7 @@ const {
   numeroDeArmstrong,
   numeroDeFibonacci,
   esNumeroFeliz,
+  strCount,
   toCamelCase
 
 } = require('./app-solutions.js')
@@ -66,6 +67,26 @@ describe('Matematicas', () => {
 })
 
 describe('String', () => {
+  describe('strCount', () => {
+    test('Si no se proporciona se encuentra coincidencia debe devolver 0', () => {
+      expect(strCount('hello', 'm')).toBe(0)
+      expect(strCount('', 'j')).toBe(0)
+    })
+    test('Si se encuentran coincidencias debe devolver la cantidad de coincidencias encontradas', () => {
+      expect(strCount('alfombra', 'a')).toBe(2)
+      expect(strCount('murcielago', 'r')).toBe(1)
+      expect(strCount('hamburgesas', 's')).toBe(2)
+    })
+    test('Detecta los espacios como un caracter valido', () => {
+      expect(strCount('Nueva York', ' ')).toBe(1)
+      expect(strCount('Ciudad de Buenos Aires', ' ')).toBe(3)
+    })
+    test('Los espacios iniciales y finales no los detecta como caracter valido', () => {
+      expect(strCount(' Nueva York ', ' ')).toBe(1)
+      expect(strCount('Ciudad de Buenos Aires   ', ' ')).toBe(3)
+    })
+  })
+
   describe('toCamelCase', () => {
     test('Si se proporciona un string vacio devuelve el string vacio', () => {
       expect(toCamelCase('')).toBe('')

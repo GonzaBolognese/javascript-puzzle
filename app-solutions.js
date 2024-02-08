@@ -49,6 +49,19 @@ const esNumeroFeliz = (num) => {
 }
 
 // STRINGS
+
+const strCount = (str, char) => {
+  let count = 0
+  const trimmedStr = str.trim() // Eliminar espacios iniciales y finales
+
+  for (let i = 0; i < trimmedStr.length; i++) {
+    if (trimmedStr[i] === char) {
+      count++
+    }
+  }
+  return count
+}
+
 // CONVERTIR GUIONES/GUIONES BAJOS EN CAMELCASE
 
 const toCamelCase = (str) => {
@@ -65,5 +78,6 @@ module.exports = {
   numeroDeArmstrong,
   numeroDeFibonacci,
   esNumeroFeliz,
+  strCount,
   toCamelCase
 }
